@@ -24,4 +24,9 @@ class SirTrevorEditor extends TextareaField {
         parent::__construct($name, $title, $value);
         self::requirements();
     }
+
+    public function FieldHolder($properties = array()) {
+        $this->addExtraClass('stacked');
+        return parent::FieldHolder($properties);
+    }
 }
