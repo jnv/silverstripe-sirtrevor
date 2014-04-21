@@ -1,0 +1,8 @@
+{
+  "name": "silverstripe-sirtrevor",
+  "private": "true",
+  "version": "0.0.1",
+  "dependencies": {
+    "sir-trevor-js": "0.3.2"
+  }
+}
