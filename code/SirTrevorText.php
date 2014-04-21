@@ -17,6 +17,6 @@ class SirTrevorText extends Text {
     }
 
     public function scaffoldFormField($title = null, $params = null) {
-        return new SirTrevorField($this->name, $title);
+        return new SirTrevorEditor($this->name, $title);
     }
 }

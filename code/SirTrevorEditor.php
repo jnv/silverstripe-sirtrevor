@@ -1,6 +1,6 @@
 <?php
 
-class SirTrevorField extends TextareaField {
+class SirTrevorEditor extends TextareaField {
     private static function path($to = '') {
         return 'sirtrevor/' . $to;
     }
@@ -23,14 +23,5 @@ class SirTrevorField extends TextareaField {
     public function __construct($name, $title = null, $value = '') {
         parent::__construct($name, $title, $value);
         self::requirements();
-    }
-
-    /**
-     * Returns the field holder used by templates
-     * @return {string} HTML to be used
-     */
-    public function FieldHolder($properties = array()) {
-        $this->addExtraClass('js-sirtrevorfield');
-        return parent::FieldHolder($properties);
     }
 }
