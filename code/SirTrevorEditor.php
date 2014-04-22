@@ -11,13 +11,14 @@ class SirTrevorEditor extends TextareaField {
     public static function requirements() {
         Requirements::css(self::path('thirdparty/sir-trevor-js/sir-trevor-icons.css'));
         Requirements::css(self::path('thirdparty/sir-trevor-js/sir-trevor.css'));
+        Requirements::css(self::path('css/sirtrevoreditor.css'));
 
         Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
         Requirements::javascript(THIRDPARTY_DIR. '/jquery-entwine/dist/jquery.entwine-dist.js');
         Requirements::javascript(self::path('thirdparty/underscore/underscore-min.js'));
         Requirements::javascript(self::path('thirdparty/Eventable/eventable.js'));
         Requirements::javascript(self::path('thirdparty/sir-trevor-js/sir-trevor.js'));
-        Requirements::javascript(self::path('javascript/sirtrevor.js'));
+        Requirements::javascript(self::path('javascript/sirtrevoreditor.js'));
     }
 
     public function __construct($name, $title = null, $value = '') {
