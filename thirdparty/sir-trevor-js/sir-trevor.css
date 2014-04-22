@@ -2,11 +2,11 @@
   font-size: 16px; }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
+/*
 [data-icon]:before,
 [data-icon-after]:after {
   font-family: 'ST-Icons';
   speak: none;
-  /* Enable Ligatures */
   -webkit-font-feature-settings: "liga","dlig";
   -moz-font-feature-settings: "liga=1, dlig=1";
   -moz-font-feature-settings: "liga","dlig";
@@ -23,6 +23,7 @@
 
 [data-icon-after]:after {
   content: attr(data-icon-after); }
+*/
 
 .st-icon {
   font-family: 'ST-Icons';
