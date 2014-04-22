@@ -15,10 +15,27 @@ class SirTrevorEditor extends TextareaField {
 
         Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
         Requirements::javascript(THIRDPARTY_DIR. '/jquery-entwine/dist/jquery.entwine-dist.js');
-        Requirements::javascript(self::path('thirdparty/underscore/underscore-min.js'));
-        Requirements::javascript(self::path('thirdparty/Eventable/eventable.js'));
-        Requirements::javascript(self::path('thirdparty/sir-trevor-js/sir-trevor.js'));
+
+        Requirements::combine_files(
+            'sirtrevor.js',
+            array(
+                self::path('thirdparty/underscore/underscore-min.js'),
+                self::path('thirdparty/Eventable/eventable.js'),
+                self::path('thirdparty/sir-trevor-js/sir-trevor.js')
+            )
+        );
         Requirements::javascript(self::path('javascript/sirtrevoreditor.js'));
+
+
+        $blocks = array('images', 'files');
+        foreach ($blocks as $name) {
+            Requirements::javascript(self::path("javascript/blocks/$name.js"));
+        }
+
+        // Requirements::combine_files(
+        //     'sirtrevoreditor-blocks.js',
+        //     array(self::path('javascript/blocks'))
+        //     );
     }
 
     public function __construct($name, $title = null, $value = '') {
