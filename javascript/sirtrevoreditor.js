@@ -7,14 +7,12 @@
       $('textarea.sirtrevoreditor').entwine({
         Editor: null,
         onadd: function() {
-          console.log('onadd');
         },
         getEditor: function() {
         },
         onmatch: function() {
           // FIXME: this prohibits multiple instances on same page
           var editor = SirTrevor.getInstance();
-          console.log(editor);
           if(editor) {
             editor.reinitialize({el: this});
           }
@@ -32,6 +30,24 @@
           }
         },
       });
+
+      // Undo SilverStripe's Overly Attached Selector
+      $('.sirtrevoreditor button, .st-format-bar button').entwine({
+        onadd: function() {
+          if(this.data('button'))
+            this.button('destroy');
+        },
+      });
+
     });
+
+    var addTypographyClass = function(target) {
+      if(target) {
+        target.$el.find('.st-block__inner').addClass('typography');
+      }
+    };
+
+    SirTrevor.EventBus.on('block:create:existing', addTypographyClass);
+    SirTrevor.EventBus.on('block:create:new', addTypographyClass);
 
 })(jQuery);
