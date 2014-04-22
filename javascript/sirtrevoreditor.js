@@ -34,12 +34,24 @@
       // Undo SilverStripe's Overly Attached Selector
       $('.sirtrevoreditor button, .st-format-bar button').entwine({
         onadd: function() {
+          this.removeClass('ss-ui-button');
           if(this.data('button'))
             this.button('destroy');
         },
       });
 
     });
+
+    // $.entwine('ss', function($){
+    //   $('.sirtrevoreditor button, .st-format-bar button').entwine({
+    //     onadd: function() {
+    //       this.removeClass('ss-ui-button');
+    //       if(this.data('button'))
+    //         this.button('destroy');
+    //     }
+    //   });
+    // });
+
 
     var addTypographyClass = function(target) {
       if(target) {
